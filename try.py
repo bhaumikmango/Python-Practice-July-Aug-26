@@ -212,3 +212,12 @@
 
 # print(mul(2, 3))
 # print(mul(2, 3, 4, 5, 6))
+
+# # sort elements on the basis of xth index in a nested list
+
+# a = [[1,2,3], [2,3,4], [1,2,3], [4,1,6]]
+# x = 2
+
+# out = sorted(a, key= lambda a:a[x])
+# print(out)
+
