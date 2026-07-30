@@ -221,3 +221,42 @@
 # out = sorted(a, key= lambda a:a[x])
 # print(out)
 
+# from typing import Final
+
+# VERSION: Final[str] = '1.2.22'
+# print(VERSION)
+
+# # Type annotations are not enforced in python
+# VERSION = '1.2.24'
+# print(VERSION)
+
+# Classes in python 
+
+class Car():
+    def __init__(self, colour : str, horses : float, brand : str) -> None:
+        self.colour = colour
+        self.horsepower = horses
+        self.brand = brand
+
+    def drive(self) -> None:
+        if self.brand.lower() == "bmw":
+            print(f"Your {self.brand} is raging like a bull.")
+        elif self.brand.lower() == "rolls royce" or self.brand.lower() == "bentley":
+            print(f"The {self.brand} is rolling like a majestic gazelle.")
+        else:
+            print(f"Your {self.brand} is driving")
+            
+car1 = Car("Scarlet Red", 444.25, "BMW")
+car2 = Car("Pearl Blue", 380, "Bentley")
+
+car1.drive()
+car2.drive()
+
+#Dunder method (Double underscore)
+
+class Volvo(Car):
+    def __str__(self) -> str:
+        return f"{self.brand}, {self.horsepower} hp"
+
+volvo1 = Volvo("Forest Green", 285, "Volvo")
+print(volvo1)
