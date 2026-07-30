@@ -55,28 +55,55 @@
 
 # make_matcha()
 
+# # Decorating functions with parameters
 
-# Decorating functions with parameters
+# import time
+# from datetime import datetime, timedelta
 
-import time
-from datetime import datetime, timedelta
+# def timer_dec(base_fn):
+#     def enhanced_fn(*args, **kwargs):
+#         start_time = time.time()
+#         res = base_fn(*args, **kwargs)
+#         end_time = time.time()
+#         print(f"Task Time : {end_time-start_time} seconds")
+#         return res
+#     return enhanced_fn
 
-def timer_dec(base_fn):
-    def enhanced_fn(*args, **kwargs):
-        start_time = time.time()
-        res = base_fn(*args, **kwargs)
-        end_time = time.time()
-        print(f"Task Time : {end_time-start_time} seconds")
-        return res
-    return enhanced_fn
+# @timer_dec
+# def brew_tea(tea_type : str, steep_time : int):
+#     print(f"Brewing {tea_type.title()} Tea ....")
+#     time.sleep(steep_time)
+#     print(f"{tea_type.title()} Tea is ready!")
+#     return f"Start drinking tea by {datetime.now() + timedelta(seconds=340)}."
 
-@timer_dec
-def brew_tea(tea_type : str, steep_time : int):
-    print(f"Brewing {tea_type.title()} Tea ....")
-    time.sleep(steep_time)
-    print(f"{tea_type.title()} Tea is ready!")
-    return f"Start drinking tea by {datetime.now() + timedelta(seconds=340)}."
+# brew_tea("lAvender", 5)
+# brew_tea(tea_type="London", steep_time=3)
+# print(brew_tea("Masala", 4))
 
-brew_tea("lAvender", 5)
-brew_tea(tea_type="London", steep_time=3)
-print(brew_tea("Masala", 4))
+
+
+# # Generator Functions
+
+# # Difference bw return and yield, in return once value returned back,
+# # python won't execute the lines after return keyword, on the other hand
+# # in case of yield, python pauses the functions execution, the remaining 
+# # lines of code in the function will only be ran if the main program 
+# # requests the function for it.
+
+# def gen_values():
+#     yield 1
+#     yield 2
+#     yield 3
+
+# gen_value_object = gen_values()
+
+# # print(next(gen_value_object))
+# # print(next(gen_value_object))
+# # print(next(gen_value_object))
+# # print(next(gen_value_object)) #It'll give a stop iteration error here
+
+# # To prevent error, we use for loop to request generator functions for values
+
+# for i in gen_value_object:
+#     print(i)
+
