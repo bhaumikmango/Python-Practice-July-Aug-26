@@ -230,33 +230,80 @@
 # VERSION = '1.2.24'
 # print(VERSION)
 
-# Classes in python 
+# # Classes in python 
 
-class Car():
-    def __init__(self, colour : str, horses : float, brand : str) -> None:
-        self.colour = colour
-        self.horsepower = horses
-        self.brand = brand
+# class Car():
+#     def __init__(self, colour : str, horses : float, brand : str) -> None:
+#         self.colour = colour
+#         self.horsepower = horses
+#         self.brand = brand
 
-    def drive(self) -> None:
-        if self.brand.lower() == "bmw":
-            print(f"Your {self.brand} is raging like a bull.")
-        elif self.brand.lower() == "rolls royce" or self.brand.lower() == "bentley":
-            print(f"The {self.brand} is rolling like a majestic gazelle.")
-        else:
-            print(f"Your {self.brand} is driving")
+#     def drive(self) -> None:
+#         if self.brand.lower() == "bmw":
+#             print(f"Your {self.brand} is raging like a bull.")
+#         elif self.brand.lower() == "rolls royce" or self.brand.lower() == "bentley":
+#             print(f"The {self.brand} is rolling like a majestic gazelle.")
+#         else:
+#             print(f"Your {self.brand} is driving")
             
-car1 = Car("Scarlet Red", 444.25, "BMW")
-car2 = Car("Pearl Blue", 380, "Bentley")
+# car1 = Car("Scarlet Red", 444.25, "BMW")
+# car2 = Car("Pearl Blue", 380, "Bentley")
 
-car1.drive()
-car2.drive()
+# car1.drive()
+# car2.drive()
 
-#Dunder method (Double underscore)
+# #Dunder method (Double underscore)
 
-class Volvo(Car):
-    def __str__(self) -> str:
-        return f"{self.brand}, {self.horsepower} hp"
+# class Volvo(Car):
+#     def __str__(self) -> str:
+#         return f"{self.brand}, {self.horsepower} hp"
 
-volvo1 = Volvo("Forest Green", 285, "Volvo")
-print(volvo1)
+# volvo1 = Volvo("Forest Green", 285, "Volvo")
+# print(volvo1)
+
+# # OOPs in Python
+
+# class microwave():
+#     def __init__(self, brand: str, power_rating: float) -> None:
+#         self.brand = brand
+#         self.power_rating = power_rating
+#         self.turned_on : bool = False
+
+#     def turn_on(self) -> None:
+#         if not self.turned_on:
+#             self.turned_on = True
+#             print(f"{self.brand} Microwave is turned on.")
+#         else:
+#             print(f"{self.brand} Microwave is already on.")
+
+#     def turn_off(self) -> None:
+#         if self.turned_on:
+#             self.turned_on = False
+#             print(f"{self.brand} Microwave is turned off.")
+#         else:
+#             print(f"{self.brand} Microwave is already off.")
+
+#     def run(self, seconds : int) -> None:
+#         if self.turned_on:
+#             print(f"Running {self.brand} microwave for {seconds} seconds")
+#         else:
+#             print("Turn on the microwave first. | <object_name>.turn_on() |")
+
+#     def __add__(self, other):
+#         return (self.brand + other.brand)
+
+#     def __mul__(self, other):
+#         return (self.power_rating * other.power_rating)    
+
+# phillips = microwave("Phillips", 300)
+# print(phillips)
+
+# phillips.turn_on()
+# phillips.turn_on()
+# phillips.run(33)
+# phillips.turn_off()
+
+# bosch = microwave("Bosch", 450)
+
+# print(phillips + bosch)
+# print(phillips * bosch)
