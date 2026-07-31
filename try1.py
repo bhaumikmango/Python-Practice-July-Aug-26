@@ -126,18 +126,43 @@
 
 # print(get_primes_list(50, 100))
 
-def get_primes_list(start, end):
-    for num in range(start, end + 1):
-        if num < 2:
-            continue
-        is_prime = True
-        for i in range(2, num):
-            if num % i == 0:
-                is_prime = False
-                break
-        if is_prime:
-            yield num
+# def get_primes_list(start, end):
+#     for num in range(start, end + 1):
+#         if num < 2:
+#             continue
+#         is_prime = True
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 is_prime = False
+#                 break
+#         if is_prime:
+#             yield num
 
-print(next(get_primes_list(50, 100)))
+# print(next(get_primes_list(50, 100)))
 
-print(list(get_primes_list(1, 100))) # Saves all the values of a generator function, making it mimic a normal function
+# print(list(get_primes_list(1, 100))) # Saves all the values of a generator function, making it mimic a normal function
+
+
+# # Frozenset
+
+# normal : set[int] = {1, 2, 3, 3, 4, 4, 5, 6}
+# frozen : frozenset[int] = frozenset((1, 2, 3, 3, 4, 4, 5))
+
+# print(normal) # mutable
+# print(frozen) # immutable datatype
+
+# normal.add(10)
+# normal.remove(1)
+
+# frozen = frozen.union(normal) # Although we can create a new set from them
+
+# print(normal) 
+# print(frozen) 
+
+# # Frozenset is hashable so can be used as a key in a dict
+
+# data : dict = {frozen : 1}
+
+# print(data)
+
+# No specific advantage of frozenset over set in general use cases
