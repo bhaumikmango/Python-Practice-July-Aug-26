@@ -107,3 +107,37 @@
 # for i in gen_value_object:
 #     print(i)
 
+
+# # Converting below regular function into generator
+
+# def get_primes_list(start, end):
+#     primes = []
+#     for num in range(start, end + 1):
+#         if num < 2:
+#             continue
+#         is_prime = True
+#         for i in range(2, num):
+#             if num % i == 0:
+#                 is_prime = False
+#                 break
+#         if is_prime:
+#             primes.append(num)
+#     return primes
+
+# print(get_primes_list(50, 100))
+
+def get_primes_list(start, end):
+    for num in range(start, end + 1):
+        if num < 2:
+            continue
+        is_prime = True
+        for i in range(2, num):
+            if num % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            yield num
+
+print(next(get_primes_list(50, 100)))
+
+print(list(get_primes_list(1, 100))) # Saves all the values of a generator function, making it mimic a normal function
