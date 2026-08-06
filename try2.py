@@ -209,3 +209,62 @@
 #     print("Common elements in the sets are", A & B)
 
 
+# # Given Input: list1 = [101, 102, 103], list2 = [103, 104, 105]
+
+# # Expected Output: {101, 102, 104, 105}
+
+# list1 = [101, 102, 103]
+# list2 = [103, 104, 105]
+
+# print(set(list1) ^ set(list2))
+
+
+# # Power Set Generation Given Input: [1, 2, 3]
+
+# # Expected Output: [(), (1,), (2,), (3,), (1, 2), (1, 3), (2, 3), (1, 2, 3)]
+
+# from itertools import combinations
+
+# def get_power_set(s):
+#     elements = list(s)
+#     power_set = []
+    
+#     for r in range(len(elements) + 1):
+#         for combo in combinations(elements, r):
+#             power_set.append(combo)
+#             print(combo)
+#         print(r)
+#     return power_set
+
+# my_set = {1, 2, 3}
+# print(f"Power Set: {get_power_set(my_set)}")
+
+
+# Method Resolution Order in Python (MRO)
+
+class A:
+    def f1(self):
+        print("f1 works")
+    def f2(self):
+        print("f2 works")
+    def show(self):
+        print("In A Show")
+
+class B(A):
+    def f3(self):
+        print("f3 works")
+    def f4(self):
+        print("f4 works")
+    def show(self):
+        print("In B Show")
+
+class C(B):
+    def f5(self):
+        print("f5 works")
+    def f6(self):
+        print("f6 works")
+    # def show(self):
+    #     print("In C Show")
+
+obj1 = C()
+obj1.show()# Works heirarchically
